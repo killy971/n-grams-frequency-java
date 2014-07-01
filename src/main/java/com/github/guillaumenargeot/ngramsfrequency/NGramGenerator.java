@@ -13,6 +13,8 @@ public final class NGramGenerator {
     private static final Logger logger = LogManager.getLogger(NGramGenerator.class);
 
     public static Iterable<String> fromLines(final Iterable<String> lines, final int cardinality) {
+        checkNotNullArgument(lines, "lines");
+        checkStrictlyPositiveArgument(cardinality, "cardinality");
         return null;
     }
 

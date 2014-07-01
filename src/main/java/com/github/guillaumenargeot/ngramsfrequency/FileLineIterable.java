@@ -17,12 +17,12 @@ public final class FileLineIterable implements Iterable<String>, AutoCloseable {
     }
 
     @Override
-    public Iterator<String> iterator() {
+    public final Iterator<String> iterator() {
         return iterable.iterator();
     }
 
     @Override
-    public void close() throws Exception {
+    public final void close() throws Exception {
         bufferedReader.close();
     }
 }
