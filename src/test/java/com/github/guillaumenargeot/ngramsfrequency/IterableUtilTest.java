@@ -23,9 +23,32 @@ public class IterableUtilTest {
 
     @Test
     public final void testClumps() throws Exception {
-        assertThat(clumps(asList(2, 3), 1), is(equalToList(asList(2), asList(3))));
+        assertThat(clumps(asList(2, 3), 1), is(equalToList(
+                asList(2),
+                asList(3))));
         assertThat(clumps(asList(2, 3), 2), is(equalToList(asList(2, 3))));
-        assertThat(clumps(asList(2, 3), 3), is(emtpy()));
+        assertThat(clumps(asList(2, 3), 3), is(empty()));
+
+        assertThat(clumps(asList(2, 3, 5, 7, 11), 1), is(equalToList(
+                asList(2),
+                asList(3),
+                asList(5),
+                asList(7),
+                asList(11))));
+        assertThat(clumps(asList(2, 3, 5, 7, 11), 2), is(equalToList(
+                asList(2, 3),
+                asList(3, 5),
+                asList(5, 7),
+                asList(7, 11))));
+        assertThat(clumps(asList(2, 3, 5, 7, 11), 3), is(equalToList(
+                asList(2, 3, 5),
+                asList(3, 5, 7),
+                asList(5, 7, 11))));
+        assertThat(clumps(asList(2, 3, 5, 7, 11), 4), is(equalToList(
+                asList(2, 3, 5, 7),
+                asList(3, 5, 7, 11))));
+        assertThat(clumps(asList(2, 3, 5, 7, 11), 5), is(equalToList(asList(2, 3, 5, 7, 11))));
+        assertThat(clumps(asList(2, 3, 5, 7, 11), 6), is(empty()));
     }
 
     private static <T> TypeSafeMatcher<Iterable<T>> equalToList(final T... values) {
@@ -43,7 +66,7 @@ public class IterableUtilTest {
         };
     }
 
-    private static TypeSafeMatcher<Iterable<List<Integer>>> emtpy() {
+    private static TypeSafeMatcher<Iterable<List<Integer>>> empty() {
         return new TypeSafeMatcher<Iterable<List<Integer>>>() {
             @Override
             protected final boolean matchesSafely(final Iterable<List<Integer>> iterable) {
