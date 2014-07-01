@@ -11,6 +11,9 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public final class AssertionUtil {
 
+    private AssertionUtil() {
+    }
+
     public static <T> TypeSafeMatcher<Iterable<T>> equalToList(final T... values) {
         return new TypeSafeMatcher<Iterable<T>>() {
             @Override
