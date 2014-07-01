@@ -17,7 +17,7 @@ public final class FrequencyMap<T> {
     public static <T> FrequencyMap<T> of(final Iterable<T> values) {
         checkNotNullArgument(values, "values");
         final FrequencyMap<T> frequencyMap = new FrequencyMap<>();
-        frequencyMap.putAll(values);
+        frequencyMap.increaseFrequencies(values);
         return frequencyMap;
     }
 
@@ -48,7 +48,7 @@ public final class FrequencyMap<T> {
         frequencies.put(value, frequency == null ? frequencyIncrease : frequency + frequencyIncrease);
     }
 
-    public final void putAll(final Iterable<T> values) {
+    public final void increaseFrequencies(final Iterable<T> values) {
         checkNotNullArgument(values, "values");
         for (final T value : values) {
             increaseFrequency(value);

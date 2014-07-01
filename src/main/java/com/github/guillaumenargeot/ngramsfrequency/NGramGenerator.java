@@ -12,13 +12,13 @@ public final class NGramGenerator {
 
     private static final Logger logger = LogManager.getLogger(NGramGenerator.class);
 
-    public static Iterable<String> fromLines(final Iterable<String> lines, final int cardinality) {
+    public static Iterable<NGram> fromLines(final Iterable<String> lines, final int cardinality) {
         checkNotNullArgument(lines, "lines");
         checkStrictlyPositiveArgument(cardinality, "cardinality");
         return null;
     }
 
-    public static Iterable<String> fromFile(final String filename, final int cardinality) {
+    public static Iterable<NGram> fromFile(final String filename, final int cardinality) {
         checkNotNullArgument(filename, "filename");
         checkStrictlyPositiveArgument(cardinality, "cardinality");
         try (final FileLineIterable lines = new FileLineIterable(filename)) {
