@@ -1,15 +1,10 @@
 package com.github.guillaumenargeot.ngramsfrequency;
 
-import com.google.common.collect.Iterables;
-import org.hamcrest.Description;
-import org.hamcrest.TypeSafeMatcher;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
+import static com.github.guillaumenargeot.ngramsfrequency.AssertionUtil.empty;
+import static com.github.guillaumenargeot.ngramsfrequency.AssertionUtil.equalToList;
 import static com.github.guillaumenargeot.ngramsfrequency.IterableUtil.clumps;
-import static com.google.common.collect.Lists.newArrayList;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -49,34 +44,5 @@ public class IterableUtilTest {
                 asList(3, 5, 7, 11))));
         assertThat(clumps(asList(2, 3, 5, 7, 11), 5), is(equalToList(asList(2, 3, 5, 7, 11))));
         assertThat(clumps(asList(2, 3, 5, 7, 11), 6), is(empty()));
-    }
-
-    private static <T> TypeSafeMatcher<Iterable<T>> equalToList(final T... values) {
-        return new TypeSafeMatcher<Iterable<T>>() {
-            @Override
-            protected final boolean matchesSafely(final Iterable<T> iterable) {
-                final List<T> itemList = newArrayList(iterable);
-                return itemList.equals(newArrayList(values));
-            }
-
-            @Override
-            public final void describeTo(Description description) {
-                description.appendText("equal to list " + Arrays.toString(values));
-            }
-        };
-    }
-
-    private static TypeSafeMatcher<Iterable<List<Integer>>> empty() {
-        return new TypeSafeMatcher<Iterable<List<Integer>>>() {
-            @Override
-            protected final boolean matchesSafely(final Iterable<List<Integer>> iterable) {
-                return Iterables.isEmpty(iterable);
-            }
-
-            @Override
-            public final void describeTo(Description description) {
-                description.appendText("is empty");
-            }
-        };
     }
 }
