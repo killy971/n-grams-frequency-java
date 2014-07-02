@@ -15,7 +15,7 @@ public final class NGramGenerator {
     public static Iterable<NGram> fromLines(final Iterable<String> lines, final int cardinality) {
         checkNotNullArgument(lines, "lines");
         checkStrictlyPositiveArgument(cardinality, "cardinality");
-        return null;
+        return Collections.emptyList();
     }
 
     public static Iterable<NGram> fromFile(final String filename, final int cardinality) {
