@@ -12,6 +12,7 @@ public final class SentenceIterableTest {
 
     @Test
     public final void testSentenceIterable() {
-        assertThat(transform(SentenceIterable.of("a, b; c, d."), intoValue()), is(equalToList("a", "b", "c", "d")));
+        assertThat(transform(SentenceIterable.of("42"), intoValue()), is(equalToList("42")));
+        assertThat(transform(SentenceIterable.of("2, 3; 5, 7. 11"), intoValue()), is(equalToList("2", "3", "5", "7", "11")));
     }
 }

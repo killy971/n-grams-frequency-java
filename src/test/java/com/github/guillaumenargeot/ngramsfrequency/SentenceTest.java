@@ -10,6 +10,7 @@ public final class SentenceTest {
 
     @Test
     public final void testSentence() {
+        assertThat(Sentence.of("42").words(), is(equalToList("42")));
         assertThat(Sentence.of("23 57 1113").words(), is(equalToList("23", "57", "1113")));
     }
 }
