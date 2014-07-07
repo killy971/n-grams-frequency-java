@@ -1,4 +1,4 @@
-package com.github.guillaumenargeot.ngramsfrequency;
+package com.github.guillaumenargeot.ngramsfrequency.util;
 
 import com.google.common.base.Function;
 

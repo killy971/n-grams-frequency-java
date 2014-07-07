@@ -1,4 +1,4 @@
-package com.github.guillaumenargeot.ngramsfrequency;
+package com.github.guillaumenargeot.ngramsfrequency.string;
 
 import com.google.common.base.Function;
 import com.google.common.collect.FluentIterable;

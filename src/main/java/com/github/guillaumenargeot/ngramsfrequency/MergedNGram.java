@@ -4,8 +4,8 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkNotEmptyArgument;
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkStrictlyPositiveArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkNotEmptyArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkStrictlyPositiveArgument;
 import static com.google.common.collect.Iterables.size;
 
 public final class MergedNGram implements NGram {

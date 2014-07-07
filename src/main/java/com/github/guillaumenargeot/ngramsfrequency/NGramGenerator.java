@@ -1,16 +1,18 @@
 package com.github.guillaumenargeot.ngramsfrequency;
 
+import com.github.guillaumenargeot.ngramsfrequency.string.Sentence;
+import com.github.guillaumenargeot.ngramsfrequency.string.SentenceIterable;
 import com.google.common.base.Function;
 import com.google.common.collect.FluentIterable;
 
 import java.util.List;
 
-import static com.github.guillaumenargeot.ngramsfrequency.IterableUtil.intoClumps;
 import static com.github.guillaumenargeot.ngramsfrequency.MergedNGram.Functions.intoMergedNGram;
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkNotNullArgument;
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkStrictlyPositiveArgument;
-import static com.github.guillaumenargeot.ngramsfrequency.Sentence.Functions.intoWords;
-import static com.github.guillaumenargeot.ngramsfrequency.StringUtil.intoLowerCase;
+import static com.github.guillaumenargeot.ngramsfrequency.collection.IterableUtil.intoClumps;
+import static com.github.guillaumenargeot.ngramsfrequency.string.Sentence.Functions.intoWords;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkNotNullArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkStrictlyPositiveArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.StringUtil.intoLowerCase;
 import static com.google.common.collect.Iterables.transform;
 
 public final class NGramGenerator {

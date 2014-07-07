@@ -1,4 +1,7 @@
-package com.github.guillaumenargeot.ngramsfrequency;
+package com.github.guillaumenargeot.ngramsfrequency.util;
+
+import com.github.guillaumenargeot.ngramsfrequency.collection.SingleUseIterable;
+import com.github.guillaumenargeot.ngramsfrequency.io.BufferedReaderLineIterator;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

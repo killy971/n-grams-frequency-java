@@ -1,5 +1,6 @@
 package com.github.guillaumenargeot.ngramsfrequency;
 
+import com.github.guillaumenargeot.ngramsfrequency.string.Sentence;
 import org.junit.Test;
 
 import static com.github.guillaumenargeot.ngramsfrequency.AssertionUtil.equalToList;

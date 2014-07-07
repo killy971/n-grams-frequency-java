@@ -1,10 +1,10 @@
-package com.github.guillaumenargeot.ngramsfrequency;
+package com.github.guillaumenargeot.ngramsfrequency.string;
 
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkNotNullArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkNotNullArgument;
 
 public final class Sentence {
 

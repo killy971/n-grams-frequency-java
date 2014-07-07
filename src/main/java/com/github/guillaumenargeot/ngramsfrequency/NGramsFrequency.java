@@ -1,12 +1,13 @@
 package com.github.guillaumenargeot.ngramsfrequency;
 
+import com.github.guillaumenargeot.ngramsfrequency.util.FileLineIterable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Collections;
 
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkNotNullArgument;
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkStrictlyPositiveArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkNotNullArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkStrictlyPositiveArgument;
 
 public final class NGramsFrequency {
 

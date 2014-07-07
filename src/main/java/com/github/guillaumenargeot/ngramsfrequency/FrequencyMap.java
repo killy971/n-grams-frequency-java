@@ -6,8 +6,8 @@ import com.google.common.collect.Iterables;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkNotNullArgument;
-import static com.github.guillaumenargeot.ngramsfrequency.Preconditions.checkStrictlyPositiveArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkNotNullArgument;
+import static com.github.guillaumenargeot.ngramsfrequency.util.Preconditions.checkStrictlyPositiveArgument;
 import static java.util.Arrays.asList;
 
 public final class FrequencyMap<T> {

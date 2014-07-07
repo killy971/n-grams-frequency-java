@@ -1,4 +1,4 @@
-package com.github.guillaumenargeot.ngramsfrequency;
+package com.github.guillaumenargeot.ngramsfrequency.io;
 
 import com.google.common.collect.AbstractIterator;
 

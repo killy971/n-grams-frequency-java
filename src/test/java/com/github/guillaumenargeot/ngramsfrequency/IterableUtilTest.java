@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static com.github.guillaumenargeot.ngramsfrequency.AssertionUtil.empty;
 import static com.github.guillaumenargeot.ngramsfrequency.AssertionUtil.equalToList;
-import static com.github.guillaumenargeot.ngramsfrequency.IterableUtil.clumps;
+import static com.github.guillaumenargeot.ngramsfrequency.collection.IterableUtil.clumps;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;

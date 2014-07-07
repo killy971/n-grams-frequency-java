@@ -1,9 +1,10 @@
 package com.github.guillaumenargeot.ngramsfrequency;
 
+import com.github.guillaumenargeot.ngramsfrequency.string.SentenceIterable;
 import org.junit.Test;
 
 import static com.github.guillaumenargeot.ngramsfrequency.AssertionUtil.equalToList;
-import static com.github.guillaumenargeot.ngramsfrequency.Sentence.Functions.intoValue;
+import static com.github.guillaumenargeot.ngramsfrequency.string.Sentence.Functions.intoValue;
 import static com.google.common.collect.Iterables.transform;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
