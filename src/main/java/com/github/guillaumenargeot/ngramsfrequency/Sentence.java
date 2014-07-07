@@ -41,5 +41,14 @@ public final class Sentence {
                 }
             };
         }
+
+        public static Function<Sentence, Iterable<String>> intoWords() {
+            return new Function<Sentence, Iterable<String>>() {
+                @Override
+                public final Iterable<String> apply(final Sentence input) {
+                    return input.words();
+                }
+            };
+        }
     }
 }

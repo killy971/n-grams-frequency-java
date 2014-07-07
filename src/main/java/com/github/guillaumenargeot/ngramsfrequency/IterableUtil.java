@@ -1,5 +1,6 @@
 package com.github.guillaumenargeot.ngramsfrequency;
 
+import com.google.common.base.Function;
 import com.google.common.collect.AbstractIterator;
 
 import java.util.ArrayList;
@@ -19,6 +20,15 @@ public final class IterableUtil {
         checkNotNullArgument(values, "values");
         checkStrictlyPositiveArgument(size, "size");
         return new ClumpIterable<>(values, size);
+    }
+
+    public static <T> Function<Iterable<T>, Iterable<List<T>>> intoClumps(final int size) {
+        return new Function<Iterable<T>, Iterable<List<T>>>() {
+            @Override
+            public final Iterable<List<T>> apply(final Iterable<T> input) {
+                return clumps(input, size);
+            }
+        };
     }
 
     private static final class ClumpIterable<T> implements Iterable<List<T>> {
