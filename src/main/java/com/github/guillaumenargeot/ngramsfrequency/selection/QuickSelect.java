@@ -13,6 +13,9 @@ public final class QuickSelect {
 
     private static final Random random = new Random(0);
 
+    private QuickSelect() {
+    }
+
     public static <T extends Comparable<T>> List<T> selectTopK(final Iterable<T> originalList, final int topK) {
         final Comparator<T> comparator = comparator();
         return selectTopK(originalList, topK, comparator);

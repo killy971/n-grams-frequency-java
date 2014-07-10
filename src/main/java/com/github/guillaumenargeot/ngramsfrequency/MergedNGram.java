@@ -15,6 +15,16 @@ public final class MergedNGram implements NGram {
     private final int cardinality;
 
     @Override
+    public final String value() {
+        return value;
+    }
+
+    @Override
+    public final int cardinality() {
+        return cardinality;
+    }
+
+    @Override
     public boolean equals(final Object o) {
         if (this == o) {
             return true;
@@ -32,6 +42,19 @@ public final class MergedNGram implements NGram {
         int result = value.hashCode();
         result = 31 * result + cardinality;
         return result;
+    }
+
+    @Override
+    public final int compareTo(final NGram that) {
+        if (cardinality != that.cardinality()) {
+            throw new IllegalArgumentException("Cannot compare n-grams of different cardinality");
+        }
+        return value.compareTo(that.value());
+    }
+
+    @Override
+    public final String toString() {
+        return value;
     }
 
     public MergedNGram(final String value, final int cardinality) {
@@ -53,15 +76,6 @@ public final class MergedNGram implements NGram {
         return new MergedNGram(values);
     }
 
-    @Override
-    public final String value() {
-        return value;
-    }
-
-    @Override
-    public final int cardinality() {
-        return cardinality;
-    }
 
     private static void checkNoLeadingAndTrailingSpaces(final String value) {
         if (value.startsWith(" ")) {
