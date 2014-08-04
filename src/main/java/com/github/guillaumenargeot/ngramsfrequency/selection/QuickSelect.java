@@ -4,14 +4,11 @@ import com.google.common.collect.Ordering;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static java.util.Arrays.asList;
 
 public final class QuickSelect {
-
-    private static final Random random = new Random(0);
 
     private QuickSelect() {
     }
@@ -30,14 +27,35 @@ public final class QuickSelect {
             return asList(list.get(0));
         }
         while (true) {
-            final int randomPivotIndex = left + random.nextInt(right - left + 1);
-            final int pivotIndex = partition(list, left, right, randomPivotIndex, comparator);
+            final int candidatePivotIndex = simpleMedianPivotIndex(list, left, right, comparator);
+            final int pivotIndex = partition(list, left, right, candidatePivotIndex, comparator);
             if (k == pivotIndex) {
                 return copySorted(list.subList(0, k + 1), comparator);
             } else if (k < pivotIndex) {
                 right = pivotIndex - 1;
             } else {
                 left = pivotIndex + 1;
+            }
+        }
+    }
+
+    private static <T> int simpleMedianPivotIndex(final List<T> list, final int left, final int right, final Comparator<T> comparator) {
+        final int mid = (left + right) / 2;
+        if (comparator.compare(list.get(left), list.get(mid)) > 1) {
+            if (comparator.compare(list.get(mid), list.get(right)) > 1) {
+                return mid;
+            } else if (comparator.compare(list.get(left), list.get(right)) > 1) {
+                return right;
+            } else {
+                return left;
+            }
+        } else {
+            if (comparator.compare(list.get(left), list.get(right)) > 1) {
+                return left;
+            } else if (comparator.compare(list.get(mid), list.get(right)) > 1) {
+                return right;
+            } else {
+                return mid;
             }
         }
     }
